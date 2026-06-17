@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
           columns: columns,
           layout: "fitColumns",
           pagination: true,
-          paginationSize: 15,
+          paginationSize: 5,
           placeholder: "ડેટા લોડ થઈ રહ્યો છે અથવા કોઈ રેકોર્ડ નથી...",
           responsiveLayout: "collapse" 
         });
