@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     download: true,
     header: true,
     worker: true,
-    fastMode: true,
+    fastMode: false,
     skipEmptyLines: true,
     complete: function(res) {
       if (res.data && res.data.length > 0) {
@@ -122,11 +122,11 @@ document.addEventListener("DOMContentLoaded", function() {
         new Tabulator("#feedbackTable", {
           data: res.data,
           columns: columns,
-          layout: "fitColumns",
+          layout: "fitDataFill",
           height: "600px",
           progressiveRender: true,
           pagination: true,
-          paginationSize: 5,
+          paginationSize: 12,
           placeholder: "ડેટા લોડ થઈ રહ્યો છે અથવા કોઈ રેકોર્ડ નથી...",
           responsiveLayout: "collapse" 
         });
