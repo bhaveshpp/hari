@@ -12,7 +12,7 @@ script: true
     color: var(--text-color) !important;
     border: 1px solid var(--tb-border-color, #e9ecef) !important;
     font-family: inherit !important;
-    height: auto !important; /* Allows table to expand naturally */
+    height: auto !important;
   }
 
   /* Header row style */
@@ -28,7 +28,7 @@ script: true
     color: var(--text-color) !important;
     border: 1px solid var(--tb-border-color, #ccc) !important;
     border-radius: 4px;
-    padding: 2px 4px !important; /* Reduced padding for tighter look */
+    padding: 2px 4px !important;
   }
 
   /* Data rows container */
@@ -37,19 +37,23 @@ script: true
     overflow: visible !important;
   }
 
-  /* Individual data row style - REDUCED SPACING HERE */
+  /* Individual data row style */
   .tabulator .tabulator-tableholder .tabulator-table .tabulator-row {
     background-color: var(--main-bg) !important;
     color: var(--text-color) !important;
     border-bottom: 1px solid var(--tb-border-color, #eee) !important;
-    min-height: 40px !important; /* Reduced from 60px */
-    height: auto !important; /* Allows cell to size independently */
+    min-height: 40px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: flex-start !important; /* 🚀 🎯 આ લાઈન બધી કોલમના કન્ટેન્ટને ઉપર (Top) ગોઠવી રાખશે, જેથી વચ્ચે ગેપ ન વધે */
   }
 
-  /* Reduce spacing inside cells */
+  /* Reduce spacing inside cells and align text to top */
   .tabulator .tabulator-row .tabulator-cell {
-    padding: 6px 4px !important; /* Tighter padding to eliminate extra vertical spacing */
+    padding: 8px 6px !important;
     height: auto !important;
+    display: inline-block !important;
+    vertical-align: top !important; /* 🚀 🎯 મોટી કમેન્ટ વખતે નાની કોલમ્સ ઉપર ચોંટેલી રહેશે */
   }
 
   /* Zebra striping for even rows */
@@ -78,12 +82,8 @@ script: true
   }
 
   /* Star colors */
-  .tabulator-cell .tabulator-star-inactive {
-    color: #ccc !important; 
-  }
-  .tabulator-cell .tabulator-star-active {
-    color: #ffc107 !important; 
-  }
+  .tabulator-cell .tabulator-star-inactive { color: #ccc !important; }
+  .tabulator-cell .tabulator-star-active { color: #ffc107 !important; }
 
   /* --- 2. Responsive Mobile Layout: Collapse Everything Except "નામ" --- */
   @media (max-width: 992px) {
@@ -144,35 +144,30 @@ document.addEventListener("DOMContentLoaded", function() {
   Papa.parse(CSV_URL, {
     download: true,
     header: true,
-    worker: true, /* Run parser in background thread */
-    fastMode: false, /* Keep false to handle multiline paragraphs correctly */
+    worker: true,
+    fastMode: false,
     skipEmptyLines: true,
     complete: function(res) {
       if (res.data && res.data.length > 0) {
         
-        /* Map dynamically generated headers from Google Sheet */
         const columns = Object.keys(res.data[0]).map(function(key) {
-          
           let colConfig = {
             title: key,
             field: key,
-            headerFilter: true /* Keeps column filters enabled on desktop view */
+            headerFilter: true
           };
 
-          /* Format 1 to 5 numeric values to interactive graphical star icons */
-          if (key.toLowerCase() === "સ્નેહ મિલન" || key.toLowerCase() === "આયોજન" || key.toLowerCase() === "ભોજન વ્યવસ્થા" || key.toLowerCase() === "બેઠક વ્યવસ્થા" || key.toLowerCase() === "કાર્યકર્તાઓનો સહકાર" ) {
+          if (key.toLowerCase() === "સ્નેહ મિલન" || key.toLowerCase() === "આયોજન" || key.toLowerCase() === "ભોજન વ્યવस्था" || key.toLowerCase() === "બેઠક વ્યવસ્થા" || key.toLowerCase() === "કાર્યકર્તાઓનો સહકાર" ) {
             colConfig.formatter = "star"; 
-            colConfig.headerFilter = false; /* Disable filter input boxes specifically for star ratings */
+            colConfig.headerFilter = false; 
             colConfig.hozAlign = "center"; 
             colConfig.width = 120; 
           }
 
-          /* Wrap long feedback comments and multi-line paragraphs cleanly */
           if (key.toLowerCase() === "શું સૌથી વધુ ગમીયુ?" || key.toLowerCase() === "ભૂલ કે ફરિયાદ" || key.toLowerCase() === "સુધારો લાવવાની જરૂર છે" || key.toLowerCase() === "દિલથી સંદેશ/સૂચન") {
             colConfig.formatter = "textarea"; 
           }
 
-          /* Configurations for the primary identity column */
           if (key.toLowerCase() === "નામ") {
             colConfig.hozAlign = "left"; 
             colConfig.width = 150; 
@@ -185,11 +180,16 @@ document.addEventListener("DOMContentLoaded", function() {
         new Tabulator("#feedbackTable", {
           data: res.data,
           columns: columns,
-          layout: "fitColumns", /* Clean horizontal distribution on desktop screen */
-          /* 🚀 Removed 'dataLayout: "textarea"' to fix the global row-stretching / heavy spacing bug */
+          layout: "fitColumns",
           pagination: true,
-          paginationSize: 12, /* Renders exactly 12 records per page view */
-          placeholder: "ડેટા લોડ થઈ રહ્યો છે અથવા કોઈ રેકોર્ડ નથી..."
+          paginationSize: 12,
+          placeholder: "ડેટા લોડ થઈ રહ્યો છે અથવા કોઈ રેકોર્ડ નથી...",
+          
+          /* 🚀 🎯 આ બે લાઈન પેજ નંબરને બ્રાઉઝર મેમરીમાં સ્ટોર રાખશે, જેથી રીફ્રેશ કરવાથી પેજ ન બદલાય */
+          persistence: {
+            pages: true 
+          },
+          persistenceID: "feedback_table_page"
         });
       }
     }
