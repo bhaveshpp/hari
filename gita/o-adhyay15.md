@@ -1,6 +1,7 @@
 ---
 title: ૧૫. પુરુષોત્તમ યોગ.
-layout: post
+layout: page
+permallink: /gita/o-adhyay15/
 ---
 
 ----------

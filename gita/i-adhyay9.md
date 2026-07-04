@@ -1,6 +1,7 @@
 ---
 title: ૯. રાજવિધ્યારાજગુહ્ય યોગ.
-layout: post
+layout: page
+permallink: /gita/i-adhyay9/
 ---
 
 ----------

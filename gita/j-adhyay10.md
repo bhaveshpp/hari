@@ -1,6 +1,7 @@
 ---
 title: ૧૦. વિભૂતિ યોગ.
-layout: post
+layout: page
+permallink: /gita/j-adhyay10/
 ---
 
 ----------

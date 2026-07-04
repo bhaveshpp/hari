@@ -1,6 +1,7 @@
 ---
 title: ૮. અક્ષરબ્રહ્મ યોગ.
-layout: post
+layout: page
+permallink: /gita/h-adhyay8/
 ---
 
 ----------

@@ -1,6 +1,7 @@
 ---
 title: ૫. કર્મસંન્યાસ યોગ.
-layout: post
+layout: page
+permallink: /gita/e-adhyay5/
 ---
 
 ----------

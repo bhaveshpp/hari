@@ -1,6 +1,7 @@
 ---
 title: ૭. જ્ઞાનવિજ્ઞાન યોગ.
-layout: post
+layout: page
+permallink: /gita/g-adhyay7/
 ---
 
 ----------

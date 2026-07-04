@@ -1,6 +1,7 @@
 ---
 title: ૧૮. મોક્ષસંન્યાસ યોગ.
-layout: post
+layout: page
+permallink: /gita/r-adhyay18/
 ---
 
 ----------
