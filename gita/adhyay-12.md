@@ -1,7 +1,7 @@
 ---
 title: ૧૨. ભક્તિ યોગ.
 layout: page
-permallink: /gita/l-adhyay12/
+permallink: /gita/adhyay-12/
 ---
 
 ----------

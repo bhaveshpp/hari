@@ -1,7 +1,7 @@
 ---
 title: ૪. જ્ઞાનકર્મસંન્યાસ યોગ.
 layout: page
-permalink: /gita/d-adhyay4/
+permalink: /gita/adhyay-04/
 ---
 
 ----------

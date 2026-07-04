@@ -1,7 +1,7 @@
 ---
 title: ૭. જ્ઞાનવિજ્ઞાન યોગ.
 layout: page
-permallink: /gita/g-adhyay7/
+permallink: /gita/adhyay-07/
 ---
 
 ----------

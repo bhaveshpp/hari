@@ -1,7 +1,7 @@
 ---
 title: ૧૧. વિશ્વરૂપદર્શન યોગ.
 layout: page
-permallink: /gita/k-adhyay11/
+permallink: /gita/adhyay-11/
 ---
 
 ----------

@@ -1,7 +1,7 @@
 ---
 title: ૧૩. ક્ષેત્રક્ષેત્રજ્ઞ યોગ.
 layout: page
-permallink: /gita/m-adhyay13/
+permallink: /gita/adhyay-13/
 ---
 
 ----------

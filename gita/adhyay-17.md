@@ -1,7 +1,7 @@
 ---
 title: ૧૭. શ્રદ્ધાત્રયવિભાગ યોગ.
 layout: page
-permallink: /gita/q-adhyay17/
+permallink: /gita/adhyay-17/
 ---
 
 ----------

@@ -1,7 +1,7 @@
 ---
 title: ૬. ધ્યાન યોગ.
 layout: page
-permallink: /gita/f-adhyay6/
+permallink: /gita/adhyay-06/
 ---
 
 ----------

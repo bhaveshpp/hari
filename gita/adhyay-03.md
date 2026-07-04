@@ -1,7 +1,7 @@
 ---
 title: ૩. કર્મ યોગ.
 layout: page
-permalink: /gita/c-adhyay3/
+permalink: /gita/adhyay-03/
 ---
 
 

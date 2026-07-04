@@ -1,7 +1,7 @@
 ---
 title: ૧૪. ગુણત્રયવિભાગ યોગ.
 layout: page
-permallink: /gita/n-adhyay14/
+permallink: /gita/adhyay-14/
 ---
 
 ----------
