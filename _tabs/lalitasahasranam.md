@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-book
-order: 1
+order: 5
 title: લલિતા સહસ્રનામ સ્ત્રોત્ર
 ---
 
